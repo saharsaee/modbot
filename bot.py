@@ -55,8 +55,9 @@ def get_ai_response(answers):
     return response.choices[0].message.content
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    name = update.message.from_user.first_name
     await update.message.reply_text(
-        "سلام! 🌱\nمن هر روز ازت می‌پرسم حالت چطوره.\nبرای شروع بنویس /check"
+        f"سلام {name}! 🌱\nمن هر روز ازت می‌پرسم حالت چطوره.\nبرای شروع بنویس /check"
     )
 
 async def check(update: Update, context: ContextTypes.DEFAULT_TYPE):
